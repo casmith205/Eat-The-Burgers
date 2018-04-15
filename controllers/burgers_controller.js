@@ -3,6 +3,8 @@ var router = express.Router();
 
 var burger = require("../models/burger.js");
 
+
+
 // GET ROUTE
 router.get("/", function (req, res) {
     // Uses the formula defined at burger.js and passes through the callback function
@@ -19,10 +21,10 @@ router.get("/", function (req, res) {
 router.post("/api/burgers", function (req, res) {
     // Uses the formula defined at burger.js and passes through the callback function
     // Also passes through the values at req.body.name as the new burger name to add to DB
-    burger.insertOne([req.body.name], function (result) {
+    burger.insertOne(req.body.burger_name, function (result) {
         // Send back the ID of the new burger
         res.json({ id: result.insertId });
-    })
+    });
 });
 
 // PUT ROUTE
@@ -30,9 +32,9 @@ router.put("/api/burgers/:id", function (req, res) {
     // Using the id from the path, define the condition on where to update in the DB
     var condition = "id = " + req.params.id;
     burger.updateOne(
-        // SET burger_name to the burger name given in the body
+        // SET Devoured to true 
         {
-            burger_name: req.body.burger_name
+            devoured: true
         },
         // WHERE as the condition defined above
         condition,

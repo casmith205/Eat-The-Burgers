@@ -9,7 +9,7 @@ var burger = {
         });
     },
     insertOne: function(values, cb){
-        orm.insertOne("burgers", "burger", values, function(res){
+        orm.insertOne("burgers", "burger_name", values, function(res){
             cb(res);
         });
     },

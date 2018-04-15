@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var routes = require("./controllers/burgers_controller.js");
+var path = require("path");
 
 // Defining the port
 var PORT = process.env.PORT || 8080;
@@ -25,8 +26,18 @@ app.set("view engine", "handlebars");
 
 app.use(routes);
 
+// ROUTES FOR CSS & IMGs
+// Connect CSS file
+app.get("/css/burger_style.css", function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/css/burger_style.css"));
+});
+// // Connect background IMG
+// app.get("/imgs/footer_lodyas", function (req, res) {
+//   res.sendFile(path.join(__dirname, "../public/imgs/footer_lodyas.png"));
+// });
+
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
