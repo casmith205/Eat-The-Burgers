@@ -21,7 +21,7 @@ var orm = {
     // Update one row in the table
     updateOne: function (table, col, condition, cb) {
         var queryString = "UPDATE ?? SET ?? WHERE ? ";
-        connection.query(queryString, [tale, col, condition], function (err, result) {
+        connection.query(queryString, [table, col, condition], function (err, result) {
             if (err) throw err;
             cb(result);
         })

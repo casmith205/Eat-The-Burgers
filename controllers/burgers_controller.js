@@ -29,7 +29,7 @@ router.post("/api/burgers", function (req, res) {
 router.put("/api/burgers/:id", function (req, res) {
     // Using the id from the path, define the condition on where to update in the DB
     var condition = "id = " + req.params.id;
-    burgers.updateOne(
+    burger.updateOne(
         // SET burger_name to the burger name given in the body
         {
             burger_name: req.body.burger_name
