@@ -26,16 +26,6 @@ app.set("view engine", "handlebars");
 
 app.use(routes);
 
-// ROUTES FOR CSS & IMGs
-// Connect CSS file
-app.get("/css/burger_style.css", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/css/burger_style.css"));
-});
-// // Connect background IMG
-// app.get("/imgs/footer_lodyas", function (req, res) {
-//   res.sendFile(path.join(__dirname, "../public/imgs/footer_lodyas.png"));
-// });
-
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {
   // Log (server-side) when our server has started
