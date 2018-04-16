@@ -3,10 +3,6 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1{
-    margin: 0;
-    text-align: center;
-}
 
 h3{
     margin: 0;
@@ -16,15 +12,9 @@ h3{
 .container{
     background-color: white;
     opacity: .8;
-    width: 80%;
-    display: inline-block;
+    margin: 20px;
     padding: 20px;
     border-radius: 10px;
-};
-
-/* WHY DOESNT THIS WORK */
-#burgerImg{
-    padding: 30px;  
 }
 
 button{
