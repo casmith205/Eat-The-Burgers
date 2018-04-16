@@ -3,10 +3,8 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-h3{
-    margin: 0;
-    display: inline-block;
+hr{
+    background-color: grey;
 }
 
 .container{
